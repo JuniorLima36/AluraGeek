@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <title>Alura Geek</title>
+</head>
+<body>
+  <header>
+    <img class="logo" src="assets/Logo.svg" alt="">
+  </header>
+  <main>
+    <section class="products">
+      <h1>MEUS PRODUTOS:</h1>
+      <div class="container-products"  id="container-products"></div>
+    </section>
+    <section class="register-products">
+      <h2>ADICIONAR PRODUTOS:</h2>
+      <form class="register-form" id="register-form">
+        <p><input type="text" id="product-name" name="Name" placeholder="Nome..."></p>
+        <p><input type="text" id="product-price" name="Value" placeholder="Valor..."></p>
+        <p><input type="text" id="product-image" name="Image" placeholder="Imagem..."></p>
+        <p class="register-buttons">
+          <button type="submit">Guardar</button>
+          <button type="reset">Limpar</button>
+        </p>
+      </form>
+    </section>
+    <section class="modal-container" id="modal-message" style="display: none;">
+      <div class="modal-content">
+        <h2>Confirmação de Exclusão</h2>
+        <p>Tem certeza que deseja excluir este produto?</p>
+        <button class="confirm-button" id="confirm-delete">Excluir</button>
+        <button class="cancel-button" id="cancel-delete">Cancelar</button>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <h2>Alura Challenge - Oracle Next Education</h2>
+    <p>Desenvolvido por <a href="https://github.com/JuniorLima36" target="_blank">JuniorLima36</a></p>
+  </footer>
+  <div class="notification" id="notification"></div>
+  <script src="script.js"></script>
+</body>
+</html>
