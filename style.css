@@ -315,9 +315,12 @@ footer a:hover {
     width: 675px;
   }
 
-  .container-products h2 {
-    width: 500px;
-    font-size: 24px;
+  .product-card h2 {
+    font-size: 20px;
+  }
+
+  .product-value {
+    width: 136px;
   }
 
   .products-notification {
@@ -359,11 +362,6 @@ footer a:hover {
     width: 375px;
   }
 
-  .container-products h2 {
-    width: 375px;
-    font-size: 22px;
-  }
-
   .product-card {
     width: 156px;
   }
@@ -371,6 +369,10 @@ footer a:hover {
   .product-card .product-photo {
     width: 136px;
     height: 134px;
+  }
+
+  .product-card h2 {
+    font-size: 15px;
   }
 
   .product-value {
@@ -415,11 +417,6 @@ footer a:hover {
     width: 295px;
   }
 
-  .container-products h2 {
-    width: 295px;
-    font-size: 18px;
-  }
-
   .product-card {
     width: 126px;
     margin: 10px;
@@ -431,6 +428,7 @@ footer a:hover {
   }
 
   .product-card h2 {
+    width: 295px;
     font-size: 12px;
   }
 
