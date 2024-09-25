@@ -61,6 +61,11 @@ async function getProducts() {
   }
 }
 
+function validUrl(url) {
+  const pattern = /\.(jpeg|jpg|gif|png|webp|bmp)$/i;
+  return pattern.test(url);
+}
+
 async function addProduct(event) {
   event.preventDefault();
 
@@ -68,7 +73,7 @@ async function addProduct(event) {
   const price = parseFloat(document.getElementById('product-price').value);
   const image = document.getElementById('product-image').value;
 
-  if (!name || isNaN(price) || !image) {
+  if (!name || isNaN(price) || !validUrl(image)) {
     showNotification('Por favor, preencha todos os campos corretamente!');
     return;
   }
