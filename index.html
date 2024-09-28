@@ -13,6 +13,7 @@
     <img class="logo" src="assets/Logo.svg" alt="">
   </header>
   <main>
+    <div class="notification" id="notification"></div>
     <section class="products">
       <h1>MEUS PRODUTOS:</h1>
       <div class="container-products"  id="container-products"></div>
@@ -20,17 +21,33 @@
     <section class="register-products">
       <h2>ADICIONAR PRODUTOS:</h2>
       <form class="register-form" id="register-form">
-        <p><input type="text" id="product-name" name="Name" placeholder="Nome..."></p>
-        <p><input type="text" id="product-price" name="Value" placeholder="Valor..."></p>
-        <p><input type="text" id="product-image" name="Image" placeholder="Imagem..."></p>
+        <p><input type="text" id="product-name" placeholder="Nome..."></p>
+        <p><input type="text" id="product-price" placeholder="Valor..."></p>
+        <p><input type="text" id="product-image-url" placeholder="URL da Imagem..."></p>
+        <p><input type="file" id="product-image-file" accept="image/*"></p>
         <p class="register-buttons">
-          <button type="submit">Guardar</button>
+          <button type="submit" id="submit-button">Salvar</button>
           <button type="reset">Limpar</button>
         </p>
       </form>
     </section>
-    <section class="modal-container" id="modal-message" style="display: none;">
-      <div class="modal-content">
+    <section class="modal-edit" id="modal-edit" style="display: none;">
+      <article class="edit-content">
+        <h2>Editar Produto</h2>
+        <form class="edit-form" id="edit-form">
+          <p><input type="text" id="edit-product-name" placeholder="Nome..."></p>
+          <p><input type="text" id="edit-product-price" placeholder="Valor..."></p>
+          <p><input type="text" id="edit-product-image-url" placeholder="URL da Imagem..."></p>
+          <p><input type="file" id="edit-product-image-file" accept="image/*"></p>
+          <p class="edit-buttons">
+            <button type="submit">Salvar</button>
+            <button type="button" id="modal-close">Cancelar</button>
+          </p>
+        </form>
+      </article>
+    </section>
+    <section class="modal-delete" id="modal-delete" style="display: none;">
+      <div class="delete-content">
         <h2>Confirmação de Exclusão</h2>
         <p>Tem certeza que deseja excluir este produto?</p>
         <button class="confirm-button" id="confirm-delete">Excluir</button>
@@ -42,7 +59,6 @@
     <h2>Alura Challenge - Oracle Next Education</h2>
     <p>Desenvolvido por <a href="https://github.com/JuniorLima36" target="_blank">JuniorLima36</a></p>
   </footer>
-  <div class="notification" id="notification"></div>
   <script src="script.js"></script>
 </body>
 </html>

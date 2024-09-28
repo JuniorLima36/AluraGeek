@@ -1,7 +1,7 @@
 
 # 🚀 Challenge AluraGeek - Alura + Oracle
 
-Este projeto é uma aplicação web que permite aos usuários gerenciar produtos em um catálogo. Os usuários podem adicionar novos produtos, visualizar a lista de produtos existentes e excluir produtos indesejados.
+Este projeto é uma aplicação web que permite aos usuários gerenciar produtos em um catálogo. Os usuários podem visualizar a lista de produtos existentes, adicionar novos produtos, editar ou excluir produtos indesejados.
 
 Utilizei a ferramenta MockAPI que funciona como um backend para conseguir testar todas as funcionalidades.
 

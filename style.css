@@ -18,6 +18,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  height: 100vh;
 }
 
 header {
@@ -38,7 +39,7 @@ main {
   justify-content: center;
   height: 100vh;
   gap: 100px;
-  padding: 75px;
+  padding: 50px;
 }
 
 .products {
@@ -47,6 +48,7 @@ main {
   flex-direction: column;
   gap: 25px;
   width: 758px;
+  height: 71.8vh;
   padding: 25px 0px;
   border-radius: 20px;
   box-shadow: 0px 0px 10px 10px var(--bg-shadow);
@@ -76,7 +78,6 @@ main {
 }
 
 .container-products h2 {
-  width: 450px;
   font-size: 28px;
   font-weight: 500;
   color: var(--bg-blue);
@@ -140,19 +141,19 @@ main {
 	flex-direction: column;
   gap: 40px;
   width: 550px;
-  height: 450px;
+  height: 550px;
   padding: 25px 0px;
   border-radius: 20px;
   box-shadow: 0px 0px 10px 10px var(--bg-shadow);
 }
 
-.register-products h2 {
+.register-products h2, .edit-content h2 {
   text-transform: capitalize;
   font-size: 32px;
   color: var(--bg-black);
 }
 
-.register-form {
+.register-form, .edit-form {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -160,13 +161,13 @@ main {
   gap: 35px;
 }
 
-.register-form p {
+.register-form p, .edit-form p {
   width: 392px;
   font-size: 18px;
 	color: var(--bg-blue);
 }
 
-.register-form input {
+.register-form input, .edit-form input {
   outline: none;
   resize: none;
   width: 392px;
@@ -178,12 +179,16 @@ main {
   border: 3px solid var(--bg-blue);
 }
 
-.register-buttons {
+.register-form input::placeholder, .edit-form input::placeholder {
+  color: var(--bg-blue);
+}
+
+.register-buttons, .edit-buttons {
   display: flex;
   justify-content: space-between;
 }
 
-.register-buttons button {
+.register-buttons button, .edit-buttons button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -198,7 +203,7 @@ main {
   transition: .4s;
 }
 
-.register-buttons button:hover {
+.register-buttons button:hover, .edit-buttons button:hover {
   cursor: pointer;
   background-color: var(--bg-blue);
 }
@@ -236,7 +241,7 @@ footer a:hover {
   text-decoration: underline;
 }
 
-.modal-container {
+.modal-delete, .modal-edit  {
   display: flex; 
   align-items: center; 
   justify-content: center; 
@@ -249,7 +254,7 @@ footer a:hover {
   background-color: var(--bg-shadow); 
 }
 
-.modal-content {
+.delete-content, .edit-content {
   display: flex;
   flex-direction: column;
   text-align: center; 
@@ -278,6 +283,12 @@ footer a:hover {
   background-color: var(--bg-blue); 
 }
 
+.edit-content {
+  width: 550px;
+  margin: 12% auto;
+  gap: 25px;
+}
+
 .notification {
   display: none;
   position: fixed;
@@ -295,6 +306,10 @@ footer a:hover {
 }
 
 @media (max-width: 768px) {
+  body {
+    height: 150vh;
+  }
+
   main {
     flex-direction: column;
     height: 150vh;
@@ -302,25 +317,54 @@ footer a:hover {
     gap: 25px;
   }
 
-  .products, .register-products {
+  .products {
     width: 500px;
+    height: 63vh;
+    padding: 0px;
+    gap: 0px;
+    box-shadow: none;
+  }
+
+  .register-products {
+    width: 500px;
+    height: 63vh;
+    padding: 0px;
     box-shadow: none;
   }
 
   .products h1, .register-products h2 {
+    margin-right: 0px;
     font-size: 28px;
   }
 
   .container-products {
-    width: 675px;
+    width: 585px;
+  }
+
+  .product-card {
+    width: 166px;
+  }
+
+  .product-card .product-photo {
+    width: 145px;
+    height: 144px;
   }
 
   .product-card h2 {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   .product-value {
-    width: 136px;
+    width: 146px;
+  }
+
+  .product-value span {
+    font-size: 15px;
+  }
+
+  .product-value img {
+    width: 17px;
+    height: 17px;
   }
 
   .products-notification {
@@ -337,9 +381,28 @@ footer a:hover {
     width: 235px;
     height: 50px;
   }
+
+  .edit-content {
+    width: 500px;
+    margin: 25% auto;
+  }
+
+  .edit-form p, .edit-form input {
+    width: 425px;
+    font-size: 14px;
+  } 
+
+  .edit-form button {
+    width: 195px;
+    height: 50px;
+  }
 }
 
 @media (max-width: 500px) {
+  body {
+    height: 150vh;
+  }
+
   main {
     flex-direction: column;
     height: 150vh;
@@ -347,8 +410,18 @@ footer a:hover {
     gap: 25px;
   }
 
-  .products, .register-products {
+  .products {
     width: 325px;
+    height: 60vh;
+    padding: 0px;
+    gap: 0px;
+    box-shadow: none;
+  }
+
+  .register-products {
+    width: 325px;
+    height: 60vh;
+    padding: 0px;
     box-shadow: none;
   }
 
@@ -387,15 +460,35 @@ footer a:hover {
 
   .register-form p, .register-form input {
     width: 325px;
+    font-size: 13px;
   }
 
   .register-buttons button {
     width: 150px;
     height: 50px;
   }
+
+  .edit-content {
+    width: 375px;
+    margin: 37% auto;
+  }
+
+  .edit-form p, .edit-form input {
+    width: 325px;
+    font-size: 13px;
+  } 
+
+  .edit-form button {
+    width: 150px;
+    height: 50px;
+  }
 }
 
 @media (max-width: 375px) {
+  body {
+    height: 150vh;
+  }
+
   main {
     flex-direction: column;
     height: 150vh;
@@ -405,6 +498,8 @@ footer a:hover {
 
   .products, .register-products {
     width: 295px;
+    height: 60vh;
+    padding: 0px;
     box-shadow: none;
   }
 
@@ -428,7 +523,6 @@ footer a:hover {
   }
 
   .product-card h2 {
-    width: 295px;
     font-size: 12px;
   }
 
@@ -441,8 +535,8 @@ footer a:hover {
   }
 
   .product-value img {
-    width: 15px;
-    height: 15px;
+    width: 14px;
+    height: 14px;
   }
 
   .products-notification {
@@ -453,10 +547,26 @@ footer a:hover {
 
   .register-form p, .register-form input {
     width: 295px;
+    font-size: 12px;
   }
 
   .register-buttons button {
     width: 135px;
     height: 50px;
+  }
+
+  .edit-content {
+    width: 295px;
+    margin: 55% auto;
+  }
+
+  .edit-form p, .edit-form input {
+    width: 265px;
+    font-size: 12px;
+  } 
+
+  .edit-form button {
+    width: 125px;
+    height: 40px;
   }
 }
